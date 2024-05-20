@@ -15,7 +15,7 @@ func main() {
 	Paint = ChoseTheColor(Paint)
 	slice, slicedArgs := Format(InputFile, text)
 	if len(slice) != 760 {
-		log.Fatalln("You don't have the right to modify in the template file", InputFile)
+		log.Fatalln("You don't have the right to modify in the template ", InputFile)
 	}
 
 	result := DrawAsciiArtColor(slice, slicedArgs, Paint, lettertocollored)
@@ -180,7 +180,7 @@ func ChoseTheColor(Paint string) string {
 			log.Fatalln("Unknown color:", Paint)
 		}
 	} else {
-		log.Fatalln("You dind't enter the color")
+		log.Fatalln("Usage: go run . [OPTION] [STRING]\n", "EX: go run . --color=<color> <letters to be colored> ", "something")
 	}
 	return Paint
 }
